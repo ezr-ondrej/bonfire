@@ -105,7 +105,6 @@ def test_ns_reserve_options_duration(mocker, caplog, duration: str):
 
 def test_ns_list_option(mocker, caplog, namespace_list: list, reservation_list: list):
     caplog.set_level(100000)
-
     mocker.patch("bonfire.bonfire.has_ns_operator", return_value=True)
     mocker.patch("bonfire.namespaces.get_all_namespaces", return_value=namespace_list)
     mocker.patch("bonfire.namespaces.get_json", return_value={})
