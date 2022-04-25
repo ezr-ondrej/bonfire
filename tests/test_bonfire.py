@@ -121,6 +121,8 @@ def test_ns_list_option(mocker, caplog, namespace_list: list, reservation_list: 
 
     actual = " ".join(result.output.split())
 
+    print(result.output)
+
     assert " ".join(["namespace-1", "true", "false", "none", "user-1"]) in actual
     assert " ".join(["namespace-2", "true", "false", "none", "user-2"]) in actual
     assert " ".join(["namespace-3", "false", "ready", "none"]) in actual
@@ -148,6 +150,8 @@ def test_ns_list_options_available(
 
     actual = " ".join(result.output.split())
 
+    print(result.output)
+    
     assert " ".join(["namespace-1", "true", "false", "none", "user-1"]) not in actual
     assert " ".join(["namespace-2", "true", "false", "none", "user-2"]) not in actual
     assert " ".join(["namespace-3", "false", "ready", "none"]) in actual
@@ -174,6 +178,8 @@ def test_ns_list_option_mine(
     result = runner.invoke(bonfire.namespace, ["list", "--mine"])
 
     actual = " ".join(result.output.split())
+
+    print(result.output)
 
     assert " ".join(["namespace-1", "true", "false", "none", "user-1"]) in actual
     assert " ".join(["namespace-2", "true", "false", "none", "user-2"]) not in actual
